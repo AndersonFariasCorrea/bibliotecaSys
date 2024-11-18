@@ -1,9 +1,11 @@
 .action-item {
+    height: 100%;
+    color: white;
     transition: all 0.3s;
     background: linear-gradient(to left, #a1a1fd, #6969fd, #a1a1fd);
-    color: white;
+    box-shadow: rgb(180, 179, 179, 0.8) 3px 3px 4px;
 }
 
 .action-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
 }

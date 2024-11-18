@@ -23,7 +23,13 @@ Se você tiver várias versões do PHP instaladas, pode adicionar a versão que 
 ## 1. Instale as dependências
 Após o download ou git clone, com o CLI (command line interface/linha de comando -> terminal) no diretório raiz execute `composer install`
 
-## 2. Execute o projeto
+## 2. Configurar o banco de dados
+### 1. Crie manualmente o banco de dados biblioteca
+Aqui você pode executar o processo como desejar, CLI, ou uma interface que você goste, tipo o PhpMyAdmin
+### 2. Execute os scripts de migração
+No CLI (interface de linha de comando -> terminal) execute `php8.1 artisan migrate`
+
+## 3. Execute o projeto
 ### 1. Com php artisan
 No diretório raiz execute `php artisan serve --port=8000`
 (opcional) `--port=portNum`, este parâmetro permite executar o projeto em uma porta específica

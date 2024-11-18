@@ -7,6 +7,7 @@
 ## Requirements
 - Composer
 - PHP >= 8.1
+- Mysql 8.x
 - Debian based system (recommended)
 
 ## Requirements
@@ -23,9 +24,15 @@ If you have multiple php version installed, you may append the version you want 
 ## 1. Install the dependencies
 After the download or git clone, with CLI (command line interface -> terminal) on root directory run `composer install`
 
-## 2. Run the project
+## 2. Set database
+### 1. Manually create the database biblioteca
+Here you may run the process as you want, CLI, o a interface you like such as PhpMyAdmin
+### 2. Run the migrate scripts
+On CLI (command line interface -> terminal) run `php8.1 artisan migrate`
+
+## 3. Run the project
 ### 1. With php artisan
-On root directy run `php artisan serve --port=8000`
+On root directory run `php artisan serve --port=8000`
 
 (Optional) `--port=portNum`, this parameter allows to run the project on a specific port
 

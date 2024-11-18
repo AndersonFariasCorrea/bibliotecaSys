@@ -13,7 +13,7 @@ return [
     'app_name' => 'Biblioteca',
     'title' => 'Inicio',
     'welcome' => 'Gerenciador de biblioteca',
-    'description' => 'Aqui você pode gerenciar sua biblioteca.
+    'description' => 'Aqui você pode gerenciar sua biblioteca.<br>
         Você pode adicionar, editar, excluir, emprestar e configurar a
         disponibilidade dos livros da sua biblioteca.',
 

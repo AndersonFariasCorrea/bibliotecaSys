@@ -10,3 +10,7 @@ a {
 a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
+
+input:focus, select:focus, textarea:focus, button:focus {
+    box-shadow: none !important;
+}

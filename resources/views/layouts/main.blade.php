@@ -17,12 +17,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="{{ asset('img/book.png') }}" alt="Book" width="30" height="30">
                 {{ __('home.app_name') }}
             </a>
@@ -32,9 +33,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
+                    </li> --}}
                     <!-- Add other nav items here -->
                 </ul>
                 <ul class="navbar-nav">
@@ -46,13 +47,13 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">
                                     <img alt="United States" width="24" height="24"
-                                        src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg"/>
+                                        src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" />
                                     English (United States)
                                 </a>
                             </li>
                             <li><a class="dropdown-item" href="{{ route('lang.switch', 'pt_BR') }}">
                                     <img alt="Brazil" width="24" height="24"
-                                        src="http://purecatamphetamine.github.io/country-flag-icons/3x2/BR.svg"/>
+                                        src="http://purecatamphetamine.github.io/country-flag-icons/3x2/BR.svg" />
                                     Português (Brasil)
                                 </a>
                             </li>
@@ -63,9 +64,7 @@
         </div>
     </nav>
 
-    <div class="container">
-        @yield('content')
-    </div>
+    @yield('content')
 </body>
 
 </html>
