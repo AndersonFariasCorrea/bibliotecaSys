@@ -46,7 +46,7 @@
                 <th>{{ __('loan.table.book_genre') }}</th>
                 <th>{{ __('loan.table.book_register_number') }}</th>
                 <th>{{ __('loan.table.end_date') }}</th>
-                <th>{{ __('book.table.status.label') }}</th>
+                <th>{{ __('loan.table.status.label') }}</th>
                 <th>{{ __('_actions.label') }}</th>
             </tr>
         </thead>

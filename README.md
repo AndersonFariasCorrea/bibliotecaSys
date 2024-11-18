@@ -1,58 +1,62 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200"></a></p>
 
-## Languages
-- [English](README.md)
-- [Português Brasil](README.pt.md)
+## Idiomas/Languages
+- [Português Brasil](README.md)
+- [English](README.en.md)
 
-## Requirements
+## Requisitos
 - __Composer__
 - __PHP >= 8.1__
 - __Mysql 8.x__
-- __Debian based system (recommended)__
+- __Sistema baseado em Debian (recomendado)__
 
-_This project was developed on a Debian-based operating system (OS) (such as Ubuntu or Linux Mint), so some file paths and configurations may differ if you're using a different OS (e.g., macOS or Windows) and may cause a **RUNTIME ERROR**._
-
-
-## Tip
-If you have multiple php version installed, you may append the version you want to use, like php8.1 ... (be sure to match version requirement)
-
-# Setting up the project
-## 1. Install the dependencies
-After the download or git clone, with CLI (command line interface -> terminal) on root directory run `composer install`
+_Este projeto foi desenvolvido em um sistema operacional (SO) baseado em Debian (como Ubuntu ou Linux Mint), então alguns caminhos de arquivos e configurações podem ser diferentes se você estiver usando um SO diferente (por exemplo, macOS ou Windows) e ocasionar um **ERRO NA EXECUÇÃO**._
 
 
-## 2. Set database
-### 1. Manually create the database biblioteca
-Here you may run the process as you want, CLI, o a interface you like such as PhpMyAdmin
+## Dica
+Se você tiver várias versões do PHP instaladas, pode concater a versão que deseja usar na chamada do php, como php8.1 ... (certifique-se de cumprir o requisito de versão)
+
+# Configurando o projeto
+## 1. Instale as dependências
+Após o download ou git clone, com o CLI (command line interface/linha de comando -> terminal) no diretório raiz execute `composer install`
 
 
-## 3. Set .env
-Copy and rename `.env.example` to `.env`. The file may be fount in project's root directory.
-Set yout database info there, such as host, database(name), user and password
-
-_Within `.env` file, database stuffs are prefixed by `DB_`_
-
-## 4. Run the migrate scripts
-On CLI (command line interface -> terminal) run `php8.1 artisan migrate`
+## 2. Configurar o banco de dados
+### 1. Crie manualmente o banco de dados biblioteca
+Aqui você pode executar o processo como desejar, CLI, ou uma interface que você goste, tipo o PhpMyAdmin
 
 
-## 5. Generate app key
-On root directory run `php artisan key:generate`
+## 3. Configure o .env
+Copie e renomeie `.env.example` para `.env`. O arquivo pode ser encontrado no diretório raiz do projeto.
+Defina suas informações de banco de dados lá, como host, banco de dados (nome), usuário e senha.
+
+_No `.env`, a parte relacionada ao banco de dados tem o prefixo `DB_`_
+
+## 4. Execute os scripts de migração
+No CLI (interface de linha de comando -> terminal) execute `php8.1 artisan migrate`
 
 
-## 6. Run the project
-### 1. With php artisan
-On root directory run `php artisan serve --port=8000`
-
-(Optional) `--port=portNum`, this parameter allows to run the project on a specific port
-
-(Optional) `--host=127.0.0.1`, this parameter allow you to set the host ip, useful in case where you use wls or want to make your application accessble from others machines in your network
-
-### 2. With php cli
-Go to `public/` diretory and run php(optional: version) -S hostNameOrIp:port
-example `php8.1 -S localhost:8000`
-
-### 3. With apache or nginx
-Add the `public/` directory to you avaliable sites and set required settings
+## 5. Gere a chave do app
+Com CLI (terminal) no diretório raiz do projeto, execute `php artisan key:generate`
 
 
+## 6. Execute o projeto
+### 1. Com php artisan
+No diretório raiz execute `php artisan serve --port=8000`
+
+(opcional) `--port=portNum`, este parâmetro permite executar o projeto em uma porta específica
+
+(opcional) `--host=127.0.0.1`, este parâmetro permite definir o IP do host, útil em caso de uso do WSL ou se você deseja tornar sua aplicação acessível a partir de outras máquinas na sua rede
+
+### 2. Com php CLI
+Vá para o diretório `public/` e execute php(opcional: versão) -S nomeDoHostOuIp:porta
+exemplo `php8.1 -S localhost:8000`
+
+### 3. Com apache ou nginx
+Adicione o diretório `public/` aos seus sites disponíveis e defina as configurações necessárias
+
+## Notas
+### Possível melhoria:
+- Adicionar um modal de confirmação ao deletar ou atualizar itens
+- Permitir o registro manual de gêneros
+- Ao editar um empréstimo verificar se data passou e definir a situação como atrasado

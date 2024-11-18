@@ -45,16 +45,16 @@
                             {{ strtoupper(app()->getLocale()) }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">
-                                    <img alt="United States" width="24" height="24"
-                                        src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" />
-                                    English (United States)
-                                </a>
-                            </li>
                             <li><a class="dropdown-item" href="{{ route('lang.switch', 'pt_BR') }}">
                                     <img alt="Brazil" width="24" height="24"
                                         src="http://purecatamphetamine.github.io/country-flag-icons/3x2/BR.svg" />
                                     Português (Brasil)
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">
+                                    <img alt="United States" width="24" height="24"
+                                        src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg" />
+                                    English (United States)
                                 </a>
                             </li>
                         </ul>

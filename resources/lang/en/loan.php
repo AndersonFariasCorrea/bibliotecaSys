@@ -32,7 +32,7 @@ return [
             'label' => 'Status',
             'returned' => 'Returned',
             'late' => 'Late',
-            'not_due_yet' => 'One time',
+            'not_due_yet' => 'On time',
         ],
         'actions' => 'Actions',
     ],

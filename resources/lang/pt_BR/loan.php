@@ -29,7 +29,7 @@ return [
         'book_register_number' => 'N° de registro do livro',
         'end_date' => 'Data de devolução',
         'status' => [
-            'label' => 'Status',
+            'label' => 'Situação',
             'returned' => 'Devolvido',
             'late' => 'Atrasado',
             'not_due_yet' => 'Em dia',

@@ -30,7 +30,7 @@ class Book extends Model
         ];
     }
 
-    public static function getGenreValue(string $genre): string|bool
+    public static function getGenreValue(string $genre)
     {
         $genres = self::getGenres();
         $genre = array_filter($genres, fn($g) => strtolower($g['name']) === strtolower($genre));
