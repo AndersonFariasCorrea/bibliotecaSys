@@ -5,17 +5,13 @@
 - [Português Brasil](README.pt.md)
 
 ## Requirements
-- Composer
-- PHP >= 8.1
-- Mysql 8.x
-- Debian based system (recommended)
-
-## Requirements
 - __Composer__
 - __PHP >= 8.1__
+- __Mysql 8.x__
 - __Debian based system (recommended)__
 
 _This project was developed on a Debian-based operating system (OS) (such as Ubuntu or Linux Mint), so some file paths and configurations may differ if you're using a different OS (e.g., macOS or Windows) and may cause a **RUNTIME ERROR**._
+
 
 ## Tip
 If you have multiple php version installed, you may append the version you want to use, like php8.1 ... (be sure to match version requirement)
@@ -24,13 +20,27 @@ If you have multiple php version installed, you may append the version you want 
 ## 1. Install the dependencies
 After the download or git clone, with CLI (command line interface -> terminal) on root directory run `composer install`
 
+
 ## 2. Set database
 ### 1. Manually create the database biblioteca
 Here you may run the process as you want, CLI, o a interface you like such as PhpMyAdmin
-### 2. Run the migrate scripts
+
+
+## 3. Set .env
+Copy and rename `.env.example` to `.env`. The file may be fount in project's root directory.
+Set yout database info there, such as host, database(name), user and password
+
+_Within `.env` file, database stuffs are prefixed by `DB_`_
+
+## 4. Run the migrate scripts
 On CLI (command line interface -> terminal) run `php8.1 artisan migrate`
 
-## 3. Run the project
+
+## 5. Generate app key
+On root directory run `php artisan key:generate`
+
+
+## 6. Run the project
 ### 1. With php artisan
 On root directory run `php artisan serve --port=8000`
 

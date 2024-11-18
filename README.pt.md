@@ -5,16 +5,13 @@
 - [Português Brasil](README.pt.md)
 
 ## Requisitos
-- Composer
-- PHP >= 8.1
-- Sistema baseado em Debian (recomendado)
-
-## Requisitos
 - __Composer__
 - __PHP >= 8.1__
+- __Mysql 8.x__
 - __Sistema baseado em Debian (recomendado)__
 
 _Este projeto foi desenvolvido em um sistema operacional (SO) baseado em Debian (como Ubuntu ou Linux Mint), então alguns caminhos de arquivos e configurações podem ser diferentes se você estiver usando um SO diferente (por exemplo, macOS ou Windows) e ocasionar um **ERRO NA EXECUÇÃO**._
+
 
 ## Dica
 Se você tiver várias versões do PHP instaladas, pode adicionar a versão que deseja usar, como php8.1 ... (certifique-se de cumprir o requisito de versão)
@@ -23,20 +20,36 @@ Se você tiver várias versões do PHP instaladas, pode adicionar a versão que 
 ## 1. Instale as dependências
 Após o download ou git clone, com o CLI (command line interface/linha de comando -> terminal) no diretório raiz execute `composer install`
 
+
 ## 2. Configurar o banco de dados
 ### 1. Crie manualmente o banco de dados biblioteca
 Aqui você pode executar o processo como desejar, CLI, ou uma interface que você goste, tipo o PhpMyAdmin
-### 2. Execute os scripts de migração
+
+
+## 3. Configure o .env
+Copie e renomeie `.env.example` para `.env`. O arquivo pode ser encontrado no diretório raiz do projeto.
+Defina suas informações de banco de dados lá, como host, banco de dados (nome), usuário e senha.
+
+_No `.env`, a parte relacionada ao banco de dados tem o prefixo `DB_`_
+
+## 4. Execute os scripts de migração
 No CLI (interface de linha de comando -> terminal) execute `php8.1 artisan migrate`
 
-## 3. Execute o projeto
+
+## 5. Gere a chave do app
+Com CLI (terminal) no diretório raiz do projeto, execute `php artisan key:generate`
+
+
+## 6. Execute o projeto
 ### 1. Com php artisan
 No diretório raiz execute `php artisan serve --port=8000`
+
 (opcional) `--port=portNum`, este parâmetro permite executar o projeto em uma porta específica
+
 (opcional) `--host=127.0.0.1`, este parâmetro permite definir o IP do host, útil em caso de uso do WSL ou se você deseja tornar sua aplicação acessível a partir de outras máquinas na sua rede
 
 ### 2. Com php CLI
-Vá para o diretório `public/` e execute php(opcional: versão) -S hostNameOrIp:port
+Vá para o diretório `public/` e execute php(opcional: versão) -S nomeDoHostOuIp:porta
 exemplo `php8.1 -S localhost:8000`
 
 ### 3. Com apache ou nginx

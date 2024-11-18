@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-3">
         @if ($errors->has('book_id'))
         <div class="coll mx-2 alert alert-danger">
             <i class="bi bi-exclamation-triangle"></i> {{ $errors->first('book_id') }}

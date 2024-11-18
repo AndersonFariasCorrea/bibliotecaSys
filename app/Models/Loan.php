@@ -20,7 +20,7 @@ class Loan extends Model
 
     public static function createLoan(array $data)
     {
-        if (! self::verifyBookAvailability($data['book_id'])) {
+        if (! self::bookIsAvaliable($data['book_id'])) {
             return redirect()->back()->withErrors([
                 'book_id' => __('loan.form_error.book_id')
             ]);
@@ -35,7 +35,7 @@ class Loan extends Model
         return redirect()->route('loan.index');
     }
 
-    public static function verifyBookAvailability(int $bookId)
+    public static function bookIsAvaliable(int $bookId)
     {
         $book = Book::findOrFail($bookId);
         $loan = Loan::where('book_id', $book->id)
@@ -88,10 +88,11 @@ class Loan extends Model
         ];
     }
 
-    public static function updateLoan($data)
+    public static function updateLoan($data, $id)
     {
-        $loan = Loan::findOrFail($data['id']);
+        $loan = Loan::findOrFail($id);
         $loan->status = $data['status'];
+        $loan->end_date = $data['end_date'];
         $loan->save();
 
         return redirect()->route('loan.index');

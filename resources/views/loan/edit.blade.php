@@ -1,11 +1,34 @@
 @extends('layouts.main')
 
-@section('title', '__actions.editing')
+@section('title', __('loan.title'))
 
 @section('content')
 
 <div class="mx-5">
     <h1>{{ __('loan.title') }} - {{ __('loan.edit')}}</h1>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <a class="btn btn-primary text-capitalize w-100" href="{{ route('loan.index') }}">
+                {{ __('_actions.back') }}
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        @if ($errors->has('status'))
+        <div class="coll mx-2 alert alert-danger">
+            <i class="bi bi-exclamation-triangle"></i> {{ $errors->first('status') }}
+        </div>
+        @endif
+    </div>
+    <div class="row mt-3">
+        @if ($errors->has('end_date'))
+        <div class="coll mx-2 alert alert-danger">
+            <i class="bi bi-exclamation-triangle"></i> {{ $errors->first('end_date') }}
+        </div>
+        @endif
+    </div>
 
     <form class="mt-5" action="{{ route('loan.update', ['id' => $loan->id]) }}"method="POST">
         @csrf

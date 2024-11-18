@@ -60,22 +60,17 @@ class LoanController extends Controller
             ]);
         } else if ($requestMethod === 'PUT') {
             $request->validate([
-                'user_id' => 'required',
-                'book_id' => 'required',
-                'end_date' => 'required|date|after:today',
+                'end_date' => 'required|date',
                 'status' => 'required|in:returned,not_due_yet,late'
             ],
             [
-                'user_id.required' => __('loan.form_required.user_id'),
-                'book_id.required' => __('loan.form_required.book_id'),
                 'end_date.required' => __('loan.form_required.end_date'),
                 'end_date.date' => __('loan.form_required.end_date_date'),
-                'end_date.after' => __('loan.form_required.end_date_after'),
                 'status.required' => __('loan.form_required.status'),
                 'status.in' => __('loan.form_required.status_in'),
             ]);
 
-            return Loan::updateLoan($request);
+            return Loan::updateLoan($request->only(['end_date', 'status']), $id);
         }
     }
 }
