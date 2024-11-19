@@ -58,8 +58,6 @@ class BookController extends Controller
                 'genres' => Book::getGenres()
             ]);
         } else if ($requestMethod === 'PUT') {
-            // TODO: Validate the request
-
             return Book::updateBook($request);
         }
     }
