@@ -6,7 +6,7 @@
 
 ## Requirements
 - __Composer__
-- __PHP >= 8.1__
+- __PHP 7.4 | 8.0__
 - __Mysql 8.x__
 - __Debian based system (recommended)__
 
