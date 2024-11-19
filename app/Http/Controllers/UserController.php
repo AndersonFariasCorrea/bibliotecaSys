@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $request->search = preg_replace("/[^A-Za-z0-9]/", "", $request->search ?? '');
+        $request->search = preg_replace("/[^A-Za-z0-9\s]/", "", $request->search ?? '');
         $users = User::where('fullname', 'like', '%' . $request->search . '%')
             ->orWhere('email', 'like', '%' . $request->search . '%')
             ->orderBy('id', 'desc')->get();

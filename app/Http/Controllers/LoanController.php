@@ -13,7 +13,7 @@ class LoanController extends Controller
 {
     public function index(Request $request)
     {
-        $request->search = preg_replace("/[^A-Za-z0-9]/", "", $request->search ?? '');
+        $request->search = preg_replace("/[^A-Za-z0-9\s]/", "", $request->search ?? '');
 
         return view('loan.index', [
             'loans' => Loan::getLoansByTerm($request->search),
